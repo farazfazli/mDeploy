@@ -16,8 +16,8 @@ then
     cd $SITEURL
     FILE=$(pwd)/runmeteor.sh
     git clone $REPO .
-    echo "meteor npm install" >> runmeteor.sh
-    echo "meteor run --port $PORT --production > /dev/null 2>&1" >> runmeteor.sh
+    echo "sudo meteor npm install" >> runmeteor.sh
+    echo "sudo meteor run --port $PORT --production > /dev/null 2>&1" >> runmeteor.sh
     chmod +x runmeteor.sh
     sudo ./runmeteor.sh &
     sudo echo "start on runlevel [2345]" > /etc/init/$SITENAME.conf
